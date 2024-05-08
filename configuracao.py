@@ -32,8 +32,8 @@ pygame.draw.aaline(tela,cor_cinza,(tela_largura/2,0), (tela_largura/2 , tela_alt
 
 
 # aqui está o limite da tela
-x = 0
-y = 0
+x = tela_largura/2- 15
+y = tela_altura/2- 15
 descendo = True
 
 while True:
@@ -42,7 +42,9 @@ while True:
             pygame.quit()
     
     pygame.display.flip()
-    tela.blit(bola,(x,y))
+    #tela.blit(bola,(x,y))
+    bola = pygame.Rect(x,y,30,30)
+    pygame.draw.rect(tela,cor_cinza, bola)
 
     if descendo:
         x = x + 1 
