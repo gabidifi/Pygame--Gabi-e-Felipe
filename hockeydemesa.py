@@ -2,6 +2,7 @@ import pygame
 import random
 import time
 from menu import *
+from gameover import *
 
 pygame.init()
 tempo = pygame.time.Clock()
@@ -65,11 +66,10 @@ tempo_score = None
 pygame.mixer.music.set_volume(0)
 menu.play()
 inicia(tela,imng1,img2)
-
+pause = False
 while True:
     for evento in pygame.event.get():
-        if evento.type == pygame.QUIT:
-            pygame.quit()
+
         if evento.type == pygame.KEYDOWN:
             if evento.key == pygame.K_DOWN:
                 velo_jogadory += 6
@@ -140,10 +140,10 @@ while True:
             velo_obstaculo *= random.choice((1,-1))
             
     # 5 Pontos
-    if jogador_score == 1 or oponente_score == 1:
-        obstaculo_pos.center = (tela_largura / 2, tela_altura / 2)
     if jogador_score == 6 or oponente_score == 6:
-        pygame.quit()
+        pygame.mixer.music.set_volume(0)
+        menu.play()
+        gameover(tela, imng1,img2)
 
     # Jogador
     jogador.y += velo_jogadory
@@ -168,6 +168,9 @@ while True:
         oponente.left = 0
     if oponente.right >= tela_largura:
         oponente.right = tela_largura
+
+    if jogador_score == 1 or oponente_score == 1:
+        obstaculo_pos.center = (tela_largura / 2, tela_altura / 2)
 
     # Frame
     tela.fill(cor_para_tras)
