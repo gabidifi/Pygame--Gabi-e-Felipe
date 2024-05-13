@@ -12,8 +12,8 @@ tela = pygame.display.set_mode((tela_largura, tela_altura))
 pygame.display.set_caption("obstaculo")
 
 # obstaculo
-obs_altura = 90
-obs_larguea = 90
+obs_altura = 70
+obs_larguea = 70
 obstaculo = pygame.image.load('obstaculo.png').convert_alpha()
 obstaculo = pygame.transform.scale(obstaculo, (obs_larguea, obs_altura))
 obstaculo_pos = pygame.Rect(tela_largura + 100, tela_altura / 2, obs_larguea, obs_altura) 
@@ -34,7 +34,7 @@ velo_jogadorx = 0
 velo_oponentex = 0
 velo_jogadory = 0
 velo_oponentey = 0
-velo_obstaculo= 2
+velo_obstaculo= 1
 # Configuração das cores
 cor_para_tras = pygame.Color('grey12')
 preto = (0, 0, 0)
@@ -113,7 +113,7 @@ while True:
         velo_bola_em_x *= -1
 
     # obstaculo
-    if jogador_score >= 2 or oponente_score >= 2:
+    if jogador_score >= 1 or oponente_score >= 1:
         obstaculo_pos.y += velo_obstaculo
         if obstaculo_pos.top <= 0 or obstaculo_pos.bottom >= tela_altura:
             velo_obstaculo *= -1
@@ -121,7 +121,7 @@ while True:
             velo_obstaculo *= random.choice((1,-1))
             
     # 5 Pontos
-    if jogador_score == 2 or oponente_score == 2:
+    if jogador_score == 1 or oponente_score == 1:
         obstaculo_pos.center = (tela_largura / 2, tela_altura / 2)
     if jogador_score == 6 or oponente_score == 6:
         pygame.quit()
