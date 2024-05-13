@@ -1,9 +1,14 @@
 import pygame
 import random
 import time
+from menu import *
 
 pygame.init()
 tempo = pygame.time.Clock()
+
+#musicas
+menu = pygame.mixer.Sound('menu.mp3')
+
 
 # Configuração da tela
 tela_largura = 1000
@@ -27,6 +32,13 @@ jogador = pygame.Rect(tela_largura - 20, tela_altura / 2 - 70, 10, 140)
 oponente = pygame.Rect(10, tela_altura / 2 - 70, 10, 140)
 bola = pygame.Rect(tela_largura / 2 - 15, tela_altura / 2 - 15, 30, 30)
 
+# imagens menu 
+
+imng1 = pygame.image.load('azul.png').convert_alpha()
+imng1 = pygame.transform.scale(imng1, [1000,480])
+img2 = pygame.image.load('branco.png').convert_alpha()
+img2 = pygame.transform.scale(img2, [1000,480])
+
  #Configuração da velocidade da bola/ jogadores
 velo_bola_em_y = 6
 velo_bola_em_x = 6
@@ -35,6 +47,7 @@ velo_oponentex = 0
 velo_jogadory = 0
 velo_oponentey = 0
 velo_obstaculo= 1
+
 # Configuração das cores
 cor_para_tras = pygame.Color('grey12')
 preto = (0, 0, 0)
@@ -46,6 +59,12 @@ fonte = pygame.font.Font("freesansbold.ttf",28)
 
 # tempo de score 
 tempo_score = None 
+
+#Inicializa o jogo com menu 
+
+pygame.mixer.music.set_volume(0)
+menu.play()
+inicia(tela,imng1,img2)
 
 while True:
     for evento in pygame.event.get():
