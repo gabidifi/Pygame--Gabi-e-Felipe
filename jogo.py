@@ -91,7 +91,7 @@ while True:
             elif evento.key == pygame.K_2:
                 escolha = 2
 
-    if escolha == 1: # Insira aqui o código do primeiro loop while True
+    if escolha == 1: 
         while True:
             for evento in pygame.event.get():
                 if evento.type == pygame.QUIT:
@@ -141,9 +141,39 @@ while True:
                 velo_bola_em_y *= random.choice((1,-1))
                 velo_bola_em_x *= random.choice((1,-1))
 
-            if bola.colliderect (jogador) or bola.colliderect(oponente) or bola.colliderect(obstaculo_pos):
-                velo_bola_em_x *= -1
-                batida.play()
+            if bola.colliderect (jogador) and velo_bola_em_x > 0:
+                if abs(bola.right - jogador.left) < 10:
+                    velo_bola_em_x *= -1
+                    batida.play()
+                elif abs(bola.bottom - jogador.top) < 10 and velo_bola_em_y > 0:
+                    velo_bola_em_y *= -1
+                    batida.play()
+                elif abs(bola.top - jogador.bottom) < 10 and velo_bola_em_y < 0:
+                    velo_bola_em_y *= -1
+                    batida.play()
+
+            if bola.colliderect(oponente) and  velo_bola_em_x <  0:
+                if abs(bola.left - oponente.right) < 10:
+                    velo_bola_em_x *= -1
+                    batida.play()
+                elif abs(bola.bottom - oponente.top) < 10 and velo_bola_em_y > 0:
+                    velo_bola_em_y *= -1
+                    batida.play()
+                elif abs(bola.top - oponente.bottom) < 10 and velo_bola_em_y < 0:
+                    velo_bola_em_y *= -1
+                    batida.play()
+                
+
+            if bola.colliderect(obstaculo_pos) and velo_bola_em_x > 0 or velo_bola_em_x <  0:
+                if abs(bola.right - jogador.left) < 10 or abs(bola.left - oponente.right) < 10:
+                    velo_bola_em_x *= -1
+                    batida.play()
+                elif abs(bola.bottom - oponente.top) < 10 and velo_bola_em_y > 0:
+                    velo_bola_em_y *= -1
+                    batida.play()
+                elif abs(bola.top - oponente.bottom) < 10 and velo_bola_em_y < 0:
+                    velo_bola_em_y *= -1
+                    batida.play()
 
             # obstaculo
             if jogador_score >= 1 or oponente_score >= 1:
@@ -204,7 +234,7 @@ while True:
             tempo.tick(60)
 
 
-    elif escolha == 2: # Insira aqui o código do segundo loop while True
+    elif escolha == 2: 
         while True:
             for evento in pygame.event.get():
                     if evento.type == pygame.QUIT:
@@ -268,9 +298,40 @@ while True:
                         velo_bola_em_y *= random.choice((1,-1))
                         velo_bola_em_x *= random.choice((1,-1))
 
-                    if bola.colliderect (jogador) or bola.colliderect(oponente) or bola.colliderect(obstaculo_pos):
-                        velo_bola_em_x *= -1
-                        batida.play()
+                    if bola.colliderect (jogador) and velo_bola_em_x > 0:
+                        if abs(bola.right - jogador.left) < 10:
+                            velo_bola_em_x *= -1
+                            batida.play()
+                        elif abs(bola.bottom - jogador.top) < 10 and velo_bola_em_y > 0:
+                            velo_bola_em_y *= -1
+                            batida.play()
+                        elif abs(bola.top - jogador.bottom) < 10 and velo_bola_em_y < 0:
+                            velo_bola_em_y *= -1
+                            batida.play()
+
+                    if bola.colliderect(oponente) and  velo_bola_em_x <  0:
+                        if abs(bola.left - oponente.right) < 10:
+                            velo_bola_em_x *= -1
+                            batida.play()
+                        elif abs(bola.bottom - oponente.top) < 10 and velo_bola_em_y > 0:
+                            velo_bola_em_y *= -1
+                            batida.play()
+                        elif abs(bola.top - oponente.bottom) < 10 and velo_bola_em_y < 0:
+                            velo_bola_em_y *= -1
+                            batida.play()
+                        
+
+                    if bola.colliderect(obstaculo_pos) and velo_bola_em_x > 0 or velo_bola_em_x <  0:
+                        if abs(bola.right - jogador.left) < 10 or abs(bola.left - oponente.right) < 10:
+                            velo_bola_em_x *= -1
+                            batida.play()
+                        elif abs(bola.bottom - oponente.top) < 10 and velo_bola_em_y > 0:
+                            velo_bola_em_y *= -1
+                            batida.play()
+                        elif abs(bola.top - oponente.bottom) < 10 and velo_bola_em_y < 0:
+                            velo_bola_em_y *= -1
+                            batida.play()
+                        
 
                     # obstaculo
                     if jogador_score >= 1 or oponente_score >= 1:
