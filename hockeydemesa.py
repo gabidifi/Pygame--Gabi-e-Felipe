@@ -35,9 +35,9 @@ bola = pygame.Rect(tela_largura / 2 - 15, tela_altura / 2 - 15, 30, 30)
 
 # imagens menu 
 
-imng1 = pygame.image.load('azul.png').convert_alpha()
+imng1 = pygame.image.load('menu1.png').convert_alpha()
 imng1 = pygame.transform.scale(imng1, [1000,480])
-img2 = pygame.image.load('branco.png').convert_alpha()
+img2 = pygame.image.load('menu2.png').convert_alpha()
 img2 = pygame.transform.scale(img2, [1000,480])
 
  #Configuração da velocidade da bola/ jogadores
@@ -48,10 +48,14 @@ velo_oponentex = 0
 velo_jogadory = 0
 velo_oponentey = 0
 velo_obstaculo= 1
+velo_oponente = 9
 
 # Configuração das cores
 cor_para_tras = pygame.Color('grey12')
 preto = (0, 0, 0)
+
+azul = (0,0,250)
+vermelho = (250,0,0)
 
 
 jogador_score = 0
@@ -67,6 +71,8 @@ pygame.mixer.music.set_volume(0)
 menu.play()
 inicia(tela,imng1,img2)
 pause = False
+
+
 while True:
     for evento in pygame.event.get():
 
@@ -176,8 +182,8 @@ while True:
     tela.fill(cor_para_tras)
     tela.blit(fundo, (0, 0))  
     tela.blit(obstaculo, obstaculo_pos) 
-    pygame.draw.rect(tela,preto,jogador)
-    pygame.draw.rect(tela,preto,oponente)
+    pygame.draw.rect(tela,azul,jogador)
+    pygame.draw.rect(tela,vermelho,oponente)
     pygame.draw.ellipse(tela,preto,bola)
     
 
