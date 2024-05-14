@@ -23,11 +23,13 @@ def inicia(janela,primeira,segunda):
                 img1 = False
                 janela.blit(segunda, (0,0))
 
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+        
+
+        #for event in pygame.event.get():
+            #if event.type == pygame.QUIT:
                 #fecha janela
-                pygame.quit()
-                break
-            elif event.type == pygame.KEYDOWN:   #Se apertar uma tecla vai patra um while e se for outra vai para o outro
-                    m = not m
+                #pygame.quit()
+                #break
+            #elif event.type == pygame.KEYDOWN:   #Se apertar uma tecla vai patra um while e se for outra vai para o outro
+                    #m = not m
         
