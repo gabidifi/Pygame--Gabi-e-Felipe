@@ -30,4 +30,4 @@ def inicia(janela,primeira,segunda):
                 break
             elif event.type == pygame.KEYDOWN:   #Se apertar uma tecla vai patra um while e se for outra vai para o outro
                     m = not m
-            
+        

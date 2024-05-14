@@ -9,6 +9,7 @@ tempo = pygame.time.Clock()
 
 #musicas
 menu = pygame.mixer.Sound('menu.mp3')
+batida = pygame.mixer.Sound('batida.mp3')
 
 
 # Configuração da tela
@@ -35,18 +36,24 @@ bola = pygame.Rect(tela_largura / 2 - 15, tela_altura / 2 - 15, 30, 30)
 
 # imagens menu 
 
-imng1 = pygame.image.load('menu1.png').convert_alpha()
-imng1 = pygame.transform.scale(imng1, [1000,480])
+img1 = pygame.image.load('menu1.png').convert_alpha()
+img1 = pygame.transform.scale(img1, [1000,480])
 img2 = pygame.image.load('menu2.png').convert_alpha()
 img2 = pygame.transform.scale(img2, [1000,480])
+
+# imagem over 
+
+img3 = pygame.image.load('over1.png').convert_alpha()
+img3 = pygame.transform.scale(img3, [1000,480])
+img4 = pygame.image.load('over2.png').convert_alpha()
+img4 = pygame.transform.scale(img4, [1000,480])
 
  #Configuração da velocidade da bola/ jogadores
 velo_bola_em_y = 6
 velo_bola_em_x = 6
 velo_jogadorx = 0
-velo_oponentex = 0
 velo_jogadory = 0
-velo_oponentey = 0
+velo_oponente = 0
 velo_obstaculo= 1
 velo_oponente = 9
 
@@ -69,7 +76,7 @@ tempo_score = None
 
 pygame.mixer.music.set_volume(0)
 menu.play()
-inicia(tela,imng1,img2)
+inicia(tela,img1,img2)
 pause = False
 
 
@@ -85,14 +92,7 @@ while True:
                 velo_jogadorx += 6
             if evento.key == pygame.K_LEFT:
                 velo_jogadorx -= 6
-            if evento.key == pygame.K_s:
-                velo_oponentey += 6
-            if evento.key == pygame.K_w:
-                velo_oponentey -= 6
-            if evento.key == pygame.K_d:
-                velo_oponentex += 6
-            if evento.key == pygame.K_a:
-                velo_oponentex -= 6
+            
 
         if evento.type == pygame.KEYUP:
             if evento.key == pygame.K_DOWN:
@@ -103,14 +103,7 @@ while True:
                 velo_jogadorx -= 6
             if evento.key == pygame.K_LEFT:
                 velo_jogadorx += 6
-            if evento.key == pygame.K_s:
-                velo_oponentey -= 6
-            if evento.key == pygame.K_w:
-                velo_oponentey += 6
-            if evento.key == pygame.K_d:
-                velo_oponentex -= 6
-            if evento.key == pygame.K_a:
-                velo_oponentex += 6
+            
 
     # ----- Gera saídas
 
@@ -136,6 +129,7 @@ while True:
 
     if bola.colliderect (jogador) or bola.colliderect(oponente) or bola.colliderect(obstaculo_pos):
         velo_bola_em_x *= -1
+        batida.play()
 
     # obstaculo
     if jogador_score >= 1 or oponente_score >= 1:
@@ -146,10 +140,10 @@ while True:
             velo_obstaculo *= random.choice((1,-1))
             
     # 5 Pontos
-    if jogador_score == 6 or oponente_score == 6:
+    if jogador_score == 2 or oponente_score == 2:
         pygame.mixer.music.set_volume(0)
         menu.play()
-        gameover(tela, imng1,img2)
+        gameover(tela, img3,img4)
 
     # Jogador
     jogador.y += velo_jogadory
@@ -164,16 +158,14 @@ while True:
         jogador.right = tela_largura
 
     # Oponente
-    oponente.y += velo_oponentey
-    oponente.x += velo_oponentex
+    if oponente.top < bola.y:
+        oponente.top += velo_oponente
+    if oponente.bottom > bola.y:
+        oponente.bottom -= velo_oponente
     if oponente.top <= 0:
         oponente.top = 0
     if oponente.bottom >= tela_altura:
         oponente.bottom = tela_altura
-    if oponente.left <= 0:
-        oponente.left = 0
-    if oponente.right >= tela_largura:
-        oponente.right = tela_largura
 
     if jogador_score == 1 or oponente_score == 1:
         obstaculo_pos.center = (tela_largura / 2, tela_altura / 2)

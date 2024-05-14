@@ -1,6 +1,5 @@
 import pygame
 from pygame.sprite import _Group
-import hockeydemesa
 import os
 
 #IMAGENS
@@ -61,4 +60,3 @@ class Oponente(pygame.sprite.Sprite):
     x = 200
     y = 200
     def __init__(self,imgs):
-        
