@@ -140,7 +140,7 @@ while True:
             velo_obstaculo *= random.choice((1,-1))
             
     # 5 Pontos
-    if jogador_score == 2 or oponente_score == 2:
+    if jogador_score == 5 or oponente_score == 5:
         pygame.mixer.music.set_volume(0)
         menu.play()
         gameover(tela, img3,img4)
