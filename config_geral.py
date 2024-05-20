@@ -31,20 +31,18 @@ oponente = pygame.Rect(10, tela_altura / 2 - 70, 10, 140)
 bola = pygame.Rect(tela_largura / 2 - 15, tela_altura / 2 - 15, 30, 30)
 
 # imagens menu 
-
 img1 = pygame.image.load('menu1.png').convert_alpha()
 img1 = pygame.transform.scale(img1, [1000,480])
 img2 = pygame.image.load('menu2.png').convert_alpha()
 img2 = pygame.transform.scale(img2, [1000,480])
 
 # imagem over 
-
 img3 = pygame.image.load('over1.png').convert_alpha()
 img3 = pygame.transform.scale(img3, [1000,480])
 img4 = pygame.image.load('over2.png').convert_alpha()
 img4 = pygame.transform.scale(img4, [1000,480])
 
- #Configuração da velocidade da bola/ jogadores
+#Configuração da velocidade da bola/ jogadores
 velo_bola_em_y = 6
 velo_bola_em_x = 6
 velo_jogadorx = 0

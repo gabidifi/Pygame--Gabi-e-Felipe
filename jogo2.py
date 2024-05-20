@@ -11,8 +11,8 @@ tempo_score = None
 #Inicializa o jogo com menu 
 
 pygame.mixer.music.set_volume(0)
-menu_som.play()
+menu_som.play() #PLAY NA MUSICA DE INICIO
 escolha = inicia(tela,img1,img2)
 pause = False
 
-game(escolha,jogador)
+game(escolha,jogador) #COMECA O JOGO COM AS FUNCOES CRIADAS ANTERIORMENTE

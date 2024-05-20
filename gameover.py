@@ -17,6 +17,7 @@ def gameover(janela, over1,over2):
             else:
                 primeiro_over = True
                 janela.blit(over1, (0,0))
+            #ESTE IF E ELSE SERVEM PARA FICAR PISCANDO NA TELA, DANDO UMA SENSACAO DE MOVIMENTO
 
         for event in pygame.event.get():
         
@@ -24,15 +25,15 @@ def gameover(janela, over1,over2):
               
                 pygame.quit()
                 break
-       
+                #SE USUARIO QUISER SAIR APENAS APERTAR NO X NORMAL
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_s:
-                    pygame.quit()
+                    pygame.quit() # COMO PODEMOS SAIR APERTANDO O X TAMBEM PODE COM A TECLA S
                     break
-                if event.key == pygame.K_c:
+                if event.key == pygame.K_c: # SE O USUARIO PRESSIONAR "C" O JOGO REINICIA PARA A TELA INICIAL
                     pygame.mixer.music.set_volume(0)
                     menu_som.play()
-                    escolha = inicia(tela,img1,img2)
+                    escolha = inicia(tela,img1,img2) #NOVAMENTE O USUARIO NA TELA INICIAL PARA ESCOLHER QUAL MODO JOGAR
                     pause = False
                     return
  
