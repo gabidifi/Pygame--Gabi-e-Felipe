@@ -1,4 +1,6 @@
 import pygame
+from menu import *
+from config_geral import *
 
 def gameover(janela, over1,over2):
     primeiro_over = True 
@@ -15,6 +17,7 @@ def gameover(janela, over1,over2):
             else:
                 primeiro_over = True
                 janela.blit(over1, (0,0))
+
         for event in pygame.event.get():
         
             if event.type == pygame.QUIT:
@@ -22,9 +25,10 @@ def gameover(janela, over1,over2):
                 pygame.quit()
                 break
        
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_c:
-                    game_over = not game_over
+            if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_s:
                     pygame.quit()
                     break
+                if event.key == pygame.K_c:
+                    inicia(tela,img1,img2)
+                    continue

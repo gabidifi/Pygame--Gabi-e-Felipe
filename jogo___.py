@@ -282,7 +282,7 @@ elif escolha == 2:
                 velo_bola_em_y *= -1
                 batida.play()
 
-        # 5 Pontos
+        # 5 Pontos para o vencendor 
         if jogador_score == 5 or oponente_score == 5:
             pygame.mixer.music.set_volume(0)
             menu_som.play()
