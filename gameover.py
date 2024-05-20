@@ -30,5 +30,11 @@ def gameover(janela, over1,over2):
                     pygame.quit()
                     break
                 if event.key == pygame.K_c:
-                    inicia(tela,img1,img2)
-                    continue
+                    pygame.mixer.music.set_volume(0)
+                    menu_som.play()
+                    escolha = inicia(tela,img1,img2)
+                    pause = False
+                    return
+ 
+                    
+                    

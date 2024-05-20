@@ -39,10 +39,6 @@ def game(escolha,jogador):
 
             if bola.top <= 0 or bola.bottom >= tela_altura:
                 velo_bola_em_y *=-1
-                # print('bola.top: ', bola.top)
-                # print('bola.bottom: ', bola.bottom)
-                # print('velo_bola_em_x: ', velo_bola_em_x)
-                # print('velo_bola_em_y: ', velo_bola_em_y)
 
             if bola.left <= 0: 
                 jogador_score += 1
