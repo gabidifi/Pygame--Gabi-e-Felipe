@@ -4,25 +4,25 @@ pygame.init()
 tempo = pygame.time.Clock()
 
 #musicas
-menu_som = pygame.mixer.Sound('menu.mp3')
-batida = pygame.mixer.Sound('batida.mp3')
+menu_som = pygame.mixer.Sound('Assets/menu.mp3')
+batida = pygame.mixer.Sound('Assets/batida.mp3')
 
 
 # Configuração da tela
 tela_largura = 1000
 tela_altura = 480
 tela = pygame.display.set_mode((tela_largura, tela_altura))
-pygame.display.set_caption("obstaculo")
+pygame.display.set_caption("Hockey de mesa")
 
 # obstaculo
 obs_altura = 70
 obs_larguea = 70
-obstaculo = pygame.image.load('obstaculo.png').convert_alpha()
+obstaculo = pygame.image.load('Assets/obstaculo.png').convert_alpha()
 obstaculo = pygame.transform.scale(obstaculo, (obs_larguea, obs_altura))
 obstaculo_pos = pygame.Rect(tela_largura + 100, tela_altura / 2, obs_larguea, obs_altura) 
 
 # Carregar a imagem de fundo
-fundo = pygame.image.load('cam.png').convert()
+fundo = pygame.image.load('Assets/cam.png').convert()
 fundo = pygame.transform.scale(fundo, (tela_largura, tela_altura))
 
 # Configuração dos objetos
@@ -31,15 +31,15 @@ oponente = pygame.Rect(10, tela_altura / 2 - 70, 10, 140)
 bola = pygame.Rect(tela_largura / 2 - 15, tela_altura / 2 - 15, 30, 30)
 
 # imagens menu 
-img1 = pygame.image.load('menu1.png').convert_alpha()
+img1 = pygame.image.load('Assets/menu1.png').convert_alpha()
 img1 = pygame.transform.scale(img1, [1000,480])
-img2 = pygame.image.load('menu2.png').convert_alpha()
+img2 = pygame.image.load('Assets/menu2.png').convert_alpha()
 img2 = pygame.transform.scale(img2, [1000,480])
 
 # imagem over 
-img3 = pygame.image.load('over1.png').convert_alpha()
+img3 = pygame.image.load('Assets/over1.png').convert_alpha()
 img3 = pygame.transform.scale(img3, [1000,480])
-img4 = pygame.image.load('over2.png').convert_alpha()
+img4 = pygame.image.load('Assets/over2.png').convert_alpha()
 img4 = pygame.transform.scale(img4, [1000,480])
 
 #Configuração da velocidade da bola/ jogadores
