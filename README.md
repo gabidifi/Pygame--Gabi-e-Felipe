@@ -56,3 +56,6 @@ Primeiramente, gostaríamos de expressar nossa gratidão ao nosso professor, Car
 Esperamos que essas informações sejam úteis para futuros projetos. Obrigado novamente pela orientação e apoio, professor Carlos.
 
 # Vídeo do jogo
+https://youtube.com/shorts/xzBjuFXGszY?feature=share
+
+- Acesse o video para ver a previa do jogo.

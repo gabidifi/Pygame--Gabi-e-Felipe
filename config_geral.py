@@ -59,6 +59,7 @@ oponente_score = 0
 
 # Configuração das cores
 cor_para_tras = pygame.Color('grey12')
+#RGB
 preto = (0, 0, 0)
 
 azul = (0,0,250)
