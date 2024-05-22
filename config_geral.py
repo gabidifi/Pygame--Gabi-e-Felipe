@@ -26,8 +26,8 @@ fundo = pygame.image.load('Assets/cam.png').convert()
 fundo = pygame.transform.scale(fundo, (tela_largura, tela_altura))
 
 # Configuração dos objetos
-jogador = pygame.Rect(tela_largura - 20, tela_altura / 2 - 70, 10, 140)
-oponente = pygame.Rect(10, tela_altura / 2 - 70, 10, 140)
+jogador = pygame.Rect(tela_largura - 20, tela_altura / 2 - 50, 10, 100)
+oponente = pygame.Rect(10, tela_altura / 2 - 50, 10, 100)
 bola = pygame.Rect(tela_largura / 2 - 15, tela_altura / 2 - 15, 30, 30)
 
 # imagens menu 
