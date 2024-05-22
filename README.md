@@ -18,7 +18,9 @@ Durante o desenvolvimento, enfrentamos vários desafios. Um dos principais foi a
 4. FUNCIONALIDADES FUTURAS
    
 Para o futuro, esperamos implementar várias melhorias e novas funcionalidades. Algumas delas incluem:
+
 •	Melhorar a inteligência artificial do computador para proporcionar diferentes níveis de dificuldade.
+
 •	Adicionar suporte para personalização do jogo, permitindo que os jogadores alterem a aparência das raquetes e do disco.
 
 # Iniciando o jogo
@@ -48,9 +50,9 @@ Na tela inicial do jogo, o usuário é apresentado com duas opções: jogar cont
 Primeiramente, gostaríamos de expressar nossa gratidão ao nosso professor, Carlos, pela paciência e assistência que nos ofereceu durante a elaboração do nosso projeto. Utilizamos os exemplos fornecidos por ele em sala de aula como fonte de aperfeiçoamento e inspiração. Além disso, recorremos aos seguintes recursos para auxiliar no desenvolvimento do projeto:
 
 - Para o jogo PONG, utilizamos este [vídeo](https://www.youtube.com/watch?v=C6jJg9Zan7w) como referência.
-- 
+  
 - Para a implementação de sons, consultamos este [artigo](https://acervolima.com/python-reproduzindo-arquivo-de-audio-no-pygame/).
-- 
+  
 - As imagens foram criadas utilizando a plataforma Canva.
 
 Esperamos que essas informações sejam úteis para futuros projetos. Obrigado novamente pela orientação e apoio, professor Carlos.
