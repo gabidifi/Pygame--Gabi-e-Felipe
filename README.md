@@ -57,6 +57,11 @@ Primeiramente, gostaríamos de expressar nossa gratidão ao nosso professor, Car
 
 Esperamos que essas informações sejam úteis para futuros projetos. Obrigado novamente pela orientação e apoio, professor Carlos.
 
+Criadores: 
+
+- Felipe Suarez
+- Gabriela Di Fiori 
+
 # Vídeo do jogo
 https://youtube.com/shorts/xzBjuFXGszY?feature=share
 
