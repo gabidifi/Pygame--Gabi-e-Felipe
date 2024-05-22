@@ -2,7 +2,6 @@
 
 # Hockey de Mesa
 
-
 # introdução
 1. O QUE NOSSA APLICAÇÃO FAZ
 
@@ -46,3 +45,14 @@ Após a instalação dos requirements, vá até o arquivo jogo e dê run. O jogo
 Na tela inicial do jogo, o usuário é apresentado com duas opções: jogar contra o computador (modo singleplayer) ou jogar contra um amigo (modo multiplayer). Se o usuário escolher o modo singleplayer, pressionando o botão 1, ele usará as setas para cima e para baixo para mover seu jogador. No caso do modo multiplayer, ativado pressionando o botão 2, o jogador 1 usará as mesmas teclas do modo singleplayer (setas para cima e para baixo), enquanto o jogador 2 usará as teclas ‘w’ e ‘s’ para se mover. Uma vez que o modo de jogo é selecionado e iniciado, a competição continua até que um dos jogadores alcance 5 pontos. Nesse momento, o jogo exibe uma tela de “game over”. Nesta tela, o usuário tem a opção de pressionar ‘s’ para sair do jogo ou ‘c’ para reiniciar e jogar novamente.
 
 # Créditos e referências bibliográficas
+Primeiramente, gostaríamos de expressar nossa gratidão ao nosso professor, Carlos, pela paciência e assistência que nos ofereceu durante a elaboração do nosso projeto. Utilizamos os exemplos fornecidos por ele em sala de aula como fonte de aperfeiçoamento e inspiração. Além disso, recorremos aos seguintes recursos para auxiliar no desenvolvimento do projeto:
+
+- Para o jogo PONG, utilizamos este [vídeo](https://www.youtube.com/watch?v=C6jJg9Zan7w) como referência.
+- 
+- Para a implementação de sons, consultamos este [artigo](https://acervolima.com/python-reproduzindo-arquivo-de-audio-no-pygame/).
+- 
+- As imagens foram criadas utilizando a plataforma Canva.
+
+Esperamos que essas informações sejam úteis para futuros projetos. Obrigado novamente pela orientação e apoio, professor Carlos.
+
+# Vídeo do jogo
